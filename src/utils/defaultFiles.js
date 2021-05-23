@@ -3,14 +3,14 @@ import { getByTitle } from "@testing-library/dom";
 const defaultFiles = [
     {
         id: '1',
-        title: 'first post',
-        body: 'should be aware of this',
+        title: 'first paper',
+        body: 'this is the body',
         createdAt: 1563762965704
     },
     {
         id: '2',
-        title: 'second post',
-        body: '## this is the title',
+        title: 'second paper',
+        body: 'this is the title',
         createdAt: 1563762965704
     }
 ]
