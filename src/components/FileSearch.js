@@ -48,6 +48,7 @@ const FileSearch = ({ title, onFileSearch }) => {
                     <input
                         className="form-control"
                         value={value}
+                        ref={node}
                         onChange={(e) => { setValue(e.target.value) }}
                     />
                     <button

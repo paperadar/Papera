@@ -18,6 +18,7 @@ function App() {
             files={defaultFiles}
             onFileClick={(id) => {console.log(id)}}
             onFileDelete={(id) => {console.log('deleting', id)}}
+            onSaveEdit={(id, newValue) => {console.log(id); console.log(newValue)}}
           />
         </div>
         <div className="col-9 bg-primary right-panel">
