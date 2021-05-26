@@ -9,6 +9,9 @@ function App() {
   return (
     <div className="App container-fluid">
       <div className="row">
+        <div className="col-1 bg-primary right-panel">
+          <h1>this is the label</h1>
+        </div>
         <div className="col-3 bg-danger left-panel">
           <FileSearch
             title='My Documents'
@@ -21,7 +24,7 @@ function App() {
             onSaveEdit={(id, newValue) => {console.log(id); console.log(newValue)}}
           />
         </div>
-        <div className="col-9 bg-primary right-panel">
+        <div className="col-8 bg-primary right-panel">
           <h1>this is the right</h1>
         </div>
       </div>
