@@ -4,13 +4,13 @@ const useKeyPress = (targetKeyCode) => {
     const [keyPressed, setKeyPressed] = useState(false)
     //按下去为true
     const keyDownHandler = ({ keyCode }) => {
-        if(keyCode == targetKeyCode) {
+        if(keyCode === targetKeyCode) {
             setKeyPressed(true)
         }
     }
     //抬起为false
     const keyUpHandler = ({ keyCode }) => {
-        if(keyCode == targetKeyCode) {
+        if(keyCode === targetKeyCode) {
             setKeyPressed(false)
         }
     }
