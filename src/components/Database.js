@@ -6,6 +6,8 @@ const fs = require('fs');
 var dbPath = path.join('../../database', "data.sqlite");
 var dbStatus = {
     isReady: false,
+    isInited: false,
+    isFreezing: false,
     processes: 0};
 
 exports.dbPath = dbPath;
@@ -18,6 +20,7 @@ function init(isDev = false) {
         fs.mkdirSync(path.dirname(exports.dbPath))
     dbStatus.isDev = isDev;
     dbStatus.isReady = false;
+    dbStatus.isFreezing = true;
     db = new sqlite3.Database(dbPath, (err) => {
         if(err) {
             if(isDev) {
@@ -69,6 +72,8 @@ function init(isDev = false) {
                     }
                     exports.close = db.close;
                     dbStatus.isReady = true;
+                    dbStatus.isInited = true;
+                    dbStatus.isFreezing = false;
                 });
             });
         });
