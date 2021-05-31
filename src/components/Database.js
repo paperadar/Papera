@@ -1,6 +1,7 @@
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 const moment = require('moment');
+const fs = require('fs');
 
 var dbPath = path.join('../../database', "data.sqlite");
 var dbStatus = {
@@ -13,6 +14,8 @@ exports.status = dbStatus;
 var db = null;
 
 function init(isDev = false) {
+    if (!fs.existsSync(path.dirname(exports.dbPath)))
+        fs.mkdirSync(path.dirname(exports.dbPath))
     dbStatus.isDev = isDev;
     dbStatus.isReady = false;
     db = new sqlite3.Database(dbPath, (err) => {
